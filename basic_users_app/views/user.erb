@@ -1,0 +1,21 @@
+<h2>User Info for <%= @user_name %></h2>
+<h3>Email Address</h3>
+  <ul>
+    <li>
+      <%= @email %>
+    </li>
+  </ul>
+<h3>Interests</h3>
+  <ul>
+    <li>
+      <%= @interests.join(", ") %>
+    </li>
+  </ul>
+
+<ul>
+  <% @user_info.each do |name, _| %>
+    <% unless name == @user_name %>
+      <li><a href="<%= name %>"><%= name %></a></li>
+    <% end %>
+  <% end %>
+</ul>
